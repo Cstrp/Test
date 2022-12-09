@@ -1,0 +1,19 @@
+.red {background-color: red}
+.green {background-color: green}
+.blue {background-color: blue}
+.yellow {background-color: yellow}
+.black {background-color: black}
+.pink {background-color: pink}
+.orange {background-color: orange}
+.purple {background-color: purple}
+
+
+.red, .green, .blue, .yellow, .black, .pink, .orange, .purple {
+  width: 200px;
+  height: 100px;
+
+  &:hover {
+    opacity: 0.75;
+    animation: shake 0.5s;
+  }
+}
