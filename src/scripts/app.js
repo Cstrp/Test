@@ -80,6 +80,8 @@ export class App {
 
     btns.appendChild(btn);
     btns.appendChild(fakeBtn);
+
+    this.input.value = "";
   }
 
   render() {
