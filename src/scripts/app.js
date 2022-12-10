@@ -64,7 +64,7 @@ export class App {
 
       btn.addEventListener("click", () => {
         for (let i = 0; i < category.length; i++) {
-          if (category[i].classList.contains(name)) {
+          if (!category[i].classList.contains(name)) {
             category[i].classList.toggle("hide");
           }
         }
@@ -73,7 +73,11 @@ export class App {
       });
 
       fakeBtn.addEventListener("click", () => {
-        this.btn.textContent = "Не стоит";
+        for (let i = 0; i < category.length; i++) {
+          if (!category[i].classList.contains(fakeName)) {
+            category[i].classList.toggle("hide");
+          }
+        }
         btn.disabled = false;
       });
     });
