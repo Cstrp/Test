@@ -1,23 +1,23 @@
-import { form, randomInteger, root } from "./utils/utils.js";
-import { Input } from "./components/input.js";
-import { Button } from "./components/button.js";
+import { form, randomInteger, root, text } from "./utils/utils.js";
+import { Input } from "./UI/input.js";
+import { Button } from "./UI/button.js";
+import { Paragraph } from "./UI/paragraph.js";
 
 
 export class App {
   btn = null;
-
   getValue = (obj) => obj;
-
-  inputs = null;
-
+  paragraph = null;
   integerRange = null;
   firstDivisor = null;
   secondDivider = null;
   inputValues = {
     arrOfNum: [],
+    arrOfText: [],
     divOne: "",
     divTwo: ""
   };
+
 
   constructor() {
 
@@ -25,15 +25,11 @@ export class App {
 
   getInputValue() {
     this.btn = new Button(root, "btn", "Start", false, "submit");
-
+    let counter = 0;
     this.btn.onClick = () => {
-      console.log(this.getValue(this.inputValues));
-      const [one, two] = this.inputValues.arrOfNum[this.inputValues.arrOfNum.length - 1];
-      for (let i = 0; i < 3; i++) {
-        console.log(randomInteger(+one, +two));
-      }
-
-      // Я Остановился тут - не забыть че доделать :)
+      counter++;
+      if (counter > 1) text.textContent = "";
+      this.counting();
       this.resetState();
     };
   }
@@ -57,7 +53,6 @@ export class App {
 
   updateState(key, evt) {
     const input = evt.target;
-
     const value = input.value.replace(/[^0-9.]/g, "").replace(/(\..*?)\..*/g, "$1");
 
     switch (key) {
@@ -79,9 +74,53 @@ export class App {
     this.secondDivider.element.value = this.inputValues.divTwo;
   }
 
+  counting() {
+    try {
+      const [one, two] = this.inputValues.arrOfNum[this.inputValues.arrOfNum.length - 1];
+      const divOne = +this.inputValues.divOne;
+      const divTwo = +this.inputValues.divTwo;
+
+      for (let i = 0; i < 3; i++) {
+        this.paragraph = new Paragraph(null, "text", `${randomInteger(+one, +two)}`);
+        this.inputValues.arrOfText.push(this.paragraph);
+      }
+
+      this.inputValues.arrOfText.forEach((i) => {
+        const values = +i.element.textContent;
+
+        if (Math.round(values % divOne) === 0) {
+          i.element.textContent = "Alter";
+          text.append(i.element);
+        } else {
+          text.append(i.element);
+        }
+
+        if (Math.round(values % divTwo) === 0) {
+          i.element.textContent = "Web";
+          text.append(i.element);
+        } else {
+          text.append(i.element);
+        }
+
+        if (Math.round(values % divOne) === 0 && Math.round(values % divTwo) === 0) {
+          i.element.textContent = "AlterWeb";
+          text.append(i.element);
+        } else {
+          text.append(i.element);
+        }
+      });
+    } catch (e) {
+      if (e) {
+        text.style.color = "red";
+      }
+      text.textContent = `Поля не могут быть пустыми`;
+    }
+  }
+
   resetState() {
     this.inputValues = {
       arrOfNum: [],
+      arrOfText: [],
       divOne: "",
       divTwo: ""
     };
