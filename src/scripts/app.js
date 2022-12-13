@@ -1,8 +1,7 @@
-import { form, randomInteger, root, text } from "./utils/utils.js";
+import { calc, form, randomInteger, root, text } from "./utils/utils.js";
 import { Input } from "./UI/input.js";
 import { Button } from "./UI/button.js";
 import { Paragraph } from "./UI/paragraph.js";
-
 
 export class App {
   btn = null;
@@ -18,9 +17,7 @@ export class App {
     divTwo: ""
   };
 
-
   constructor() {
-
   }
 
   getInputValue() {
@@ -76,7 +73,7 @@ export class App {
 
   counting() {
     try {
-      const [one, two] = this.inputValues.arrOfNum[this.inputValues.arrOfNum.length - 1];
+      const [one, two] = this.inputValues.arrOfNum.at(-1);
       const divOne = +this.inputValues.divOne;
       const divTwo = +this.inputValues.divTwo;
 
@@ -88,26 +85,27 @@ export class App {
       this.inputValues.arrOfText.forEach((i) => {
         const values = +i.element.textContent;
 
-        if (Math.round(values % divOne) === 0) {
+        if (calc(values, divOne) === 0) {
           i.element.textContent = "Alter";
           text.append(i.element);
         } else {
           text.append(i.element);
         }
 
-        if (Math.round(values % divTwo) === 0) {
+        if (calc(values, divTwo) === 0) {
           i.element.textContent = "Web";
           text.append(i.element);
         } else {
           text.append(i.element);
         }
 
-        if (Math.round(values % divOne) === 0 && Math.round(values % divTwo) === 0) {
+        if (calc(values, divOne) === 0 && calc(values, divTwo) === 0) {
           i.element.textContent = "AlterWeb";
           text.append(i.element);
         } else {
           text.append(i.element);
         }
+
       });
     } catch (e) {
       if (e) {

@@ -7,4 +7,9 @@ const randomInteger = (min, max) => {
   return Math.floor(rand);
 };
 
-export { form, root, text, randomInteger };
+const calc = (v1, v2) => {
+  let res = v1 % v2
+  return Math.floor(res)
+}
+
+export { form, root, text, calc, randomInteger };

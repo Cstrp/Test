@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f24e2bad-cbdb-43f5-a2c0-af37f6f82dcb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/scripts/UI/paragraph.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/components/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/UI/button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/components/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/UI/input.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/utils/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global/common.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +126,8 @@
       <workItem from="1670746029780" duration="5025000" />
       <workItem from="1670753412421" duration="7122000" />
       <workItem from="1670839679516" duration="9000" />
-      <workItem from="1670867446377" duration="4375000" />
+      <workItem from="1670867446377" duration="4523000" />
+      <workItem from="1670920848753" duration="367000" />
     </task>
     <servers />
   </component>
