@@ -96,6 +96,8 @@ export class App {
       btns.innerText = ''
       this.filter()
     }
+
+    if (this.values.length >= 2) this.values = []
   }
 
   render() {
