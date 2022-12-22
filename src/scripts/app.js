@@ -27,6 +27,7 @@ export class App {
 
   getInputValue() {
     const submit = document.createElement("button");
+    let counter = 0;
     submit.textContent = "Отправить";
     submit.disabled = true;
 
@@ -36,7 +37,7 @@ export class App {
     });
 
     submit.onclick = (evt) => {
-      evt.preventDefault();
+    evt.preventDefault();
       this.values.push(this.input.value.split(" "));
       this.filter();
       submit.disabled = true;
@@ -68,7 +69,6 @@ export class App {
             category[i].classList.toggle("hide");
           }
         }
-
         btn.disabled = true;
       });
 
@@ -81,11 +81,21 @@ export class App {
         btn.disabled = false;
       });
     });
-
+    
     btns.appendChild(btn);
     btns.appendChild(fakeBtn);
 
     this.input.value = "";
+    this.clearData();
+  }
+
+  clearData() {
+    const children = btns.children;
+
+    if (children.length >= 3) {
+      btns.innerText = ''
+      this.filter()
+    }
   }
 
   render() {
