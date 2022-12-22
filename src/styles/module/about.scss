@@ -1,0 +1,70 @@
+@import '../state/screens';
+
+.about__wrapper {
+  margin-top: 100px;
+
+  .about__wrapper-content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 100px;
+
+  }
+}
+
+.right__block {
+  position: relative;
+  max-width: 634px;
+  margin: 0 auto;
+
+  &-img {
+    z-index: 2;
+    -webkit-mask-image: url('../../assets/img/overlay.png');
+    mask-image: url('../../assets/img/overlay.png');
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transform: rotate(7deg);
+  }
+
+  &-overlay {
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    width: 100%;
+    transform: matrix(0.96, 0.25, -0.27, 0.97, 0, 0);
+  }
+}
+
+
+.left__block {
+  max-width: 875px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+
+  &-text {
+    text-align: justify-all;
+
+    &:nth-child(2) {
+      color: #25497e;
+    }
+  }
+}
+
+
+@media screen and (max-width: $tabletsMax) and (min-width: $smartphonesMin) {
+  #content {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .left__block-text {
+    text-align: center;
+  }
+
+}
+
+
+

@@ -1,0 +1,72 @@
+@import '../state/screens';
+
+.inst__wrapper {
+  position: relative;
+  max-width: 1920px;
+  overflow: hidden;
+
+  .over {
+    position: absolute;
+    top: 0;
+    right: -130px;
+    max-width: 280px;
+    height: 225px;
+    transform: matrix(-0.97, -0.23, 0.24, -0.97, 0, 0);
+    opacity: 0.35;
+  }
+}
+
+.card__wrapper {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &-item {
+    position: relative;
+    max-width: 458px;
+
+    &.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .inactive {
+      position: absolute;
+      max-width: 171px;
+      bottom: 0;
+      left: -75px;
+      z-index: -1;
+      height: 140px;
+      transform: matrix(-0.97, -0.23, 0.24, -0.97, 0, 0);
+    }
+
+    .overlay {
+      position: absolute;
+      max-width: 100px;
+      height: 87px;
+      background: no-repeat url('../../assets/img/svg/instagram.svg') 50%/50%;
+    }
+
+    &-img {
+      border-radius: 10px;
+    }
+  }
+}
+
+.card__nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  .arrow {
+    width: 100px;
+    height: 20px;
+
+    &.active {
+      filter: sepia(100%) hue-rotate(190deg) saturate(900%);
+    }
+  }
+}

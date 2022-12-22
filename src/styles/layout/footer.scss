@@ -1,0 +1,143 @@
+@import '../state/screens';
+
+.footer__wrapper-contacts {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.left__block {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 50px;
+}
+
+.footer__span {
+  display: flex;
+  min-width: 500px;
+  flex-flow: row nowrap;
+  gap: 30px;
+}
+
+.phone {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 30px;
+}
+
+.time {
+  display: flex;
+  flex-flow: row;
+  gap: 30px;
+  &__text {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+}
+
+.r__block {
+  width: 910px;
+  height: 410px;
+  border-radius: 10px;
+  border: 3px #fdce26 solid;
+}
+
+.end {
+  color: rgba(50, 50, 50, 0.5);
+}
+
+@media screen and (min-width: $LaptopsMin) and (max-width: $LaptopsMax) {
+  .footer__wrapper-contacts {
+    gap: 50px;
+  }
+
+  .left__block {
+    display: grid !important;
+    grid-template-columns: repeat(2, 200px);
+    column-gap: 100px;
+    align-items: start;
+    order: 2;
+
+    .phone {
+      order: 1;
+    }
+
+    .time {
+      order: 2;
+    }
+
+    .address {
+      order: 3;
+    }
+
+    .mail {
+      order: 4;
+    }
+
+    .end {
+      width: 300px;
+      order: 5;
+    }
+  }
+
+  .r__block {
+    width: 677px;
+    height: 346px;
+  }
+}
+
+@media screen and (min-width: $tabletsMin) and (max-width: $tabletsMax) {
+  .footer__wrapper-contacts {
+    gap: 50px;
+  }
+  .left__block {
+    order: 2;
+  }
+}
+
+@media screen and (max-width: $smartphonesMax) and (min-width: $smartphonesMin) {
+  .footer__wrapper-contacts {
+    gap: 50px;
+  }
+
+  .left__block {
+    display: grid !important;
+    grid-template-columns: repeat(1, 200px);
+    column-gap: 100px;
+    align-items: start;
+    order: 2;
+
+    .phone {
+      order: 1;
+    }
+
+    .time {
+      order: 2;
+    }
+
+    .address {
+      order: 3;
+    }
+
+    .mail {
+      order: 4;
+    }
+
+    .end {
+      width: 300px;
+      order: 5;
+    }
+  }
+
+  .r__block {
+    width: 311px;
+    height: 172px;
+  }
+}

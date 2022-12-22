@@ -1,0 +1,88 @@
+@import "../state/topBubbles";
+@import "../state/moveInBottom";
+
+$fuschia: #FC9E4A;
+$button-bg: $fuschia;
+
+button {
+  padding: 28px 90px 28px 90px;
+  background: linear-gradient(180deg, #FF7144 0%, #FDCE26 100%);
+  box-shadow: 0 4px 30px #FC9E4A;
+  border-radius: 70px;
+  border: none;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  display: inline-block;
+  animation: moveInBottom 3s ease-out;
+  animation-fill-mode: backwards;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:before, &:after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+  }
+
+  &:before{
+    display: none;
+    top: -75%;
+    background-image:
+            radial-gradient(circle, $button-bg 20%, transparent 20%),
+            radial-gradient(circle,  transparent 20%, $button-bg 20%, transparent 30%),
+            radial-gradient(circle, $button-bg 20%, transparent 20%),
+            radial-gradient(circle, $button-bg 20%, transparent 20%),
+            radial-gradient(circle,  transparent 10%, $button-bg 15%, transparent 20%),
+            radial-gradient(circle, $button-bg 20%, transparent 20%),
+            radial-gradient(circle, $button-bg 20%, transparent 20%),
+            radial-gradient(circle, $button-bg 20%, transparent 20%),
+            radial-gradient(circle, $button-bg 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+  }
+
+  &:after{
+    display: none;
+    bottom: -75%;
+    background-image:
+            radial-gradient(circle, $button-bg 20%, transparent 20%),
+            radial-gradient(circle, $button-bg 20%, transparent 20%),
+            radial-gradient(circle,  transparent 10%, $button-bg 15%, transparent 20%),
+            radial-gradient(circle, $button-bg 20%, transparent 20%),
+            radial-gradient(circle, $button-bg 20%, transparent 20%),
+            radial-gradient(circle, $button-bg 20%, transparent 20%),
+            radial-gradient(circle, $button-bg 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+  }
+
+  &:active{
+    transform: scale(0.9);
+    background-color: darken($button-bg, 5%);
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+  }
+
+  &.animate{
+    &:before{
+      display: block;
+      animation: topBubbles ease-in-out 0.75s forwards;
+    }
+  }
+}
+
+

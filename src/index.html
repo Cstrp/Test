@@ -1,12 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Светач</title>
-</head>
-<body>
-	
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <title>Светач</title>
+  </head>
+  <body>
+    <div id="snow">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+      ><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+      ><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+      ><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+      ><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i
+      ><i></i><i></i><i></i><i></i>
+    </div>
+
+    <div class="wrapper fs-12px fs-sm-12px fs-md-14px fs-lg-14px fs-xxl-22px">
+      <div class="modal__wrapper" id="modal">
+        <div class="modal__wrapper-content">
+          <h2>Спасибо !</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt inventore provident sapiente vel
+            veniam.
+          </p>
+          <label>
+            <input type="text" placeholder="Телефон" id="phone" autocomplete="false" />
+          </label>
+          <span class="error"></span>
+          <button class="modal__btn" id="submit" type="submit">Отправить</button>
+        </div>
+      </div>
+
+      <header class="header">
+        <div class="container">
+          <div class="header__wrapper">
+            <div class="header__wrapper-logo">
+              <img src="./assets/img/icon/logo.png" alt="logo" class="header__logo" />
+            </div>
+
+            <nav class="nav">
+              <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#chose">Наши преимущества</a></li>
+                <li><a href="#instagram">Мы в Instagram</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+              </ul>
+            </nav>
+
+            <div class="header__wrapper-phone">
+              <img src="./assets/img/svg/phone.svg" alt="phone" class="header__phone" />
+              <a href="tel:+375291234567">+ 375 29 123 45 67</a>
+              <img src="./assets/img/svg/snowflake.svg" alt="magic" id="snowflake" width="16" height="16" />
+            </div>
+
+            <div class="menu">
+              <nav>
+                <ul>
+                  <li><a class="menu__link" href="#">О нас</a></li>
+                  <li><a class="menu__link" href="#chose">Наши преимущества</a></li>
+                  <li><a class="menu__link" href="#instagram">Мы в Instagram</a></li>
+                  <li><a class="menu__link" href="#contacts">Контакты</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="menu-button">
+              <div class="menu-button-line"></div>
+              <div class="menu-button-line"></div>
+              <div class="menu-button-line"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="container">
+          <section class="school">
+            <div class="school__wrapper">
+              <div class="school__wrapper-title"></div>
+              <div class="school__wrapper-content">
+                <div class="content" id="school">
+                  <div class="card">
+                    <div class="card__left">
+                      <h2 class="fs-48px fs-sm-24px fs-md-36px fs-lg-36px fs-xxl-48px">
+                        Учебники и книги для школьников
+                      </h2>
+                      <p>Здесь должен быть пояснительный текст Можно про издательство, можно написать цену “от”..</p>
+                      <div class="card__hide">
+                        <img class="hide__img" src="./assets/img/kid.png" alt="kid" />
+                        <img class="hide__overlay" src="./assets/img/overlay.png" alt="overlay" />
+                      </div>
+                      <div class="card__btn">
+                        <button class="bubbly-button">Присоединиться</button>
+                      </div>
+                    </div>
+                    <div class="card__right">
+                      <img class="card__right-img" src="./assets/img/kid.png" alt="kid" />
+                      <img class="card__right-overlay" src="./assets/img/overlay.png" alt="overlay" />
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card__left">
+                      <h2 class="fs-48px fs-sm-24px fs-md-36px fs-lg-36px fs-xxl-48px">
+                        Учебные пособия для учителей и школ
+                      </h2>
+                      <p>Здесь должен быть пояснительный текст Можно про издательство, можно написать цену “от”..</p>
+                      <div class="card__hide">
+                        <img class="card__right-img" src="./assets/img/woman.png" alt="woman" />
+                        <img class="card__right-overlay" src="./assets/img/overlay.png" alt="overlay" />
+                      </div>
+                      <div class="card__btn">
+                        <button class="primary__btn bubbly-button">Присоединиться</button>
+                      </div>
+                    </div>
+                    <div class="card__right">
+                      <img class="card__right-img" src="./assets/img/woman.png" alt="woman" />
+                      <img class="card__right-overlay" src="./assets/img/overlay.png" alt="overlay" />
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card__left">
+                      <h2 class="fs-48px fs-sm-24px fs-md-36px fs-lg-36px fs-xxl-48px">
+                        Литература для педагогов и воспитателей детсадов
+                      </h2>
+                      <p>Здесь должен быть пояснительный текст Можно про издательство, можно написать цену “от”..</p>
+                      <div class="card__hide">
+                        <img class="card__right-img" src="./assets/img/teacher.png" alt="teacher" />
+                        <img class="card__right-overlay" src="./assets/img/overlay.png" alt="kid" />
+                      </div>
+                      <div class="card__btn">
+                        <button class="primary__btn bubbly-button">Присоединиться</button>
+                      </div>
+                    </div>
+                    <div class="card__right">
+                      <img class="card__right-img" src="./assets/img/teacher.png" alt="teacher" />
+                      <img class="card__right-overlay" src="./assets/img/overlay.png" alt="kid" />
+                    </div>
+                  </div>
+                </div>
+                <div class="control" id="controller">
+                  <img src="./assets/img/svg/arrow.svg" alt="left" id="right" />
+                  <div class="counter fs-22px fs-sm-18px fs-lg-22px fs-xxl-22px" id="navigation">
+                    <span class="tns-nav-active">1</span>
+                    <span class="tns-nav">2</span>
+                    <span class="tns-nav">3</span>
+                  </div>
+                  <img src="./assets/img/svg/arrowR.svg" alt="right" id="left" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="chose">
+            <div class="chose__wrapper" id="chose">
+              <div class="chose__wrapper-title">
+                <h3 class="fs-48px fs-sm-24px fs-md-36px fs-lg-36px fs-xxl-48px">Почему покупатели выбирают нас</h3>
+              </div>
+              <div class="chose__card-wrapper">
+                <div class="chose__card">
+                  <div class="card__img">
+                    <img src="./assets/img/svg/knowllege.svg" alt="#" />
+                    <img class="overlay" src="./assets/img/overlay.png" alt="#" />
+                  </div>
+                  <p>Входим в топ 10 образовательных магазинов</p>
+                </div>
+                <div class="chose__card">
+                  <div class="card__img">
+                    <img src="./assets/img/svg/book.svg" alt="#" />
+                    <img class="overlay" src="./assets/img/overlay.png" alt="#" />
+                  </div>
+                  <p>В наличии более 1000 экземпляров книг</p>
+                </div>
+                <div class="chose__card">
+                  <div class="card__img">
+                    <img src="./assets/img/svg/light.svg" alt="#" />
+                    <img class="overlay" src="./assets/img/overlay.png" alt="#" />
+                  </div>
+                  <p>Имеет свой бесплатный онлайн-сервис</p>
+                </div>
+                <div class="chose__card">
+                  <div class="card__img">
+                    <img src="./assets/img/svg/globus.svg" alt="#" />
+                    <img class="overlay" src="./assets/img/overlay.png" alt="#" />
+                  </div>
+                  <p>Работаем с издательствами Беларуси и России</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="about">
+            <div class="about__wrapper">
+              <div class="about__wrapper-title">
+                <h3 class="fs-48px fs-sm-24px fs-md-36px fs-lg-36px fs-xxl-48px">О магазине</h3>
+                <div class="about__wrapper-content" id="content">
+                  <div class="left__block">
+                    <p class="left__block-text">
+                      «Светоч» - это небольшой магазин, но мы, его создатели, поставили перед собой серьезную задачу. Мы
+                      хотим, чтобы здесь было пространство для встреч Книги и Ребенка. Это место, переступив порог
+                      которого, каждый родитель превращается в друга, помощника, советчика. Мы собираем только лучшую
+                      литературу для детей от 0 до 14 лет. И, конечно же, мы знаем, что дети всегда там, где сладкое,
+                      потому готовим полезные угощения, которые придутся по вкусу нашим маленьким посетителям. На наших
+                      полках можно найти развивающие игрушки, наборы для творчества, «взрослую» литературу о детях и
+                      другие полезные вещицы. Мы будем рады помочь вам с любыми рекомендациями и поучаствовать в
+                      формировании вашей домашней библиотеки.
+                    </p>
+                    <p class="left__block-text">С нетерпением ждем вас в гости!</p>
+                  </div>
+                  <div class="right__block">
+                    <img class="right__block-img" src="./assets/img/library.png" alt="library" />
+                    <img class="right__block-overlay" src="./assets/img/overlay.png" alt="overlay" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="inst">
+            <div class="inst__wrapper" id="instagram">
+              <div class="inst__wrapper-title">
+                <h3 class="fs-48px fs-sm-24px fs-md-36px fs-lg-36px fs-xxl-48px">Мы в Instagram</h3>
+              </div>
+
+              <img class="over" src="./assets/img/overlay.png" alt="#" />
+
+              <div class="card__nav">
+                <img id="first" class="arrow" src="./assets/img/svg/arrow.svg" alt="left" />
+                <img id="second" class="arrow active" src="./assets/img/svg/arrowR.svg" alt="right" />
+              </div>
+
+              <div class="card__wrapper" id="cards">
+                <div class="card__wrapper-item">
+                  <img class="card__wrapper-item-img" src="./assets/img/students1.png" alt="#" />
+                  <img class="inactive" src="./assets/img/overlay.png" alt="#" />
+                </div>
+
+                <div class="card__wrapper-item active">
+                  <img class="card__wrapper-item-img" src="./assets/img/students2.png" alt="#" />
+                  <img class="overlay" src="./assets/img/overlay.png" alt="#" />
+                </div>
+
+                <div class="card__wrapper-item">
+                  <img class="card__wrapper-item-img" src="./assets/img/students3.png" alt="#" />
+                </div>
+
+                <div class="card__wrapper-item">
+                  <img
+                    class="card__wrapper-item-img"
+                    src="https://st2.depositphotos.com/4431055/11856/i/600/depositphotos_118562150-stock-photo-young-student-girl.jpg"
+                    alt="#"
+                  />
+                </div>
+
+                <div class="card__wrapper-item">
+                  <img
+                    class="card__wrapper-item-img"
+                    src="https://images.ctfassets.net/2htm8llflwdx/Y0mAruESDwFn4MO5GbYyr/f898df53e63d503d63321d8aea34fdf8/GettyImages-947895170.jpg"
+                    alt="#"
+                  />
+                </div>
+
+                <div class="card__wrapper-item">
+                  <img class="card__wrapper-item-img" src="https://wallpapercave.com/wp/wp4385848.jpg" alt="#" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="partners">
+            <div class="partners__wrapper">
+              <div class="partners__wrapper-title">
+                <h3 class="fs-48px fs-sm-24px fs-md-36px fs-lg-36px fs-xxl-48px">Наши партнеры</h3>
+              </div>
+              <div class="partners__wrapper-content slider" id="slider">
+                <img class="tns-lazy-img aib" src="./assets/img/partners/1.png" alt="#" />
+                <img class="tns-lazy-img ave" src="./assets/img/partners/2.png" alt="#" />
+                <img class="tns-lazy-img bel" src="./assets/img/partners/3.png" alt="#" />
+                <img class="tns-lazy-img school" src="./assets/img/partners/4.png" alt="#" />
+                <img class="tns-lazy-img kyzma" src="./assets/img/partners/5.png" alt="#" />
+                <img class="tns-lazy-img new" src="./assets/img/partners/6.png" alt="#" />
+                <img class="tns-lazy-img pop" src="./assets/img/partners/7.png" alt="#" />
+                <img class="tns-lazy-img teacher" src="./assets/img/partners/8.png" alt="#" />
+                <img class="tns-lazy-img wind" src="./assets/img/partners/9.png" alt="#" />
+              </div>
+              <div class="partners__wrapper-counter">
+                <div class="controls" id="controls">
+                  <img src="./assets/img/svg/arrow.svg" alt="left" id="prev" />
+                  <div class="counter fs-22px fs-sm-18px fs-lg-22px fs-xxl-22px" id="nav">
+                    <span class="tns-nav-active">1</span>
+                    <span class="tns-nav">2</span>
+                    <span class="tns-nav">3</span>
+                  </div>
+                  <img src="./assets/img/svg/arrowR.svg" alt="right" id="next" />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer" id="contacts">
+        <div class="container">
+          <div class="footer__wrapper">
+            <div class="footer__wrapper-title">
+              <h2 class="fs-48px fs-sm-24px fs-md-36px fs-lg-36px fs-xxl-48px">Контакты</h2>
+            </div>
+            <div class="footer__wrapper-contacts">
+              <div class="left__block">
+                <div class="phone">
+                  <a class="footer__span" href="tel:8-(0222)-77-98-60">
+                    <img class="header__phone" src="./assets/img/svg/phone.svg" alt="#" />8-(0222)-77-98-60
+                  </a>
+                  <a class="footer__span" href="tel:8-(0222)-77-98-90">
+                    <img class="header__phone" src="./assets/img/svg/phone.svg" alt="#" />8-(0222)-77-98-90
+                  </a>
+                </div>
+                <div class="address">
+                  <span class="footer__span"
+                    ><img class="header__phone" src="./assets/img/svg/Vector.svg" alt="#" />г. Могилёв ул. Королёва, д.
+                    37</span
+                  >
+                </div>
+                <div class="time">
+                  <img class="header__phone" src="./assets/img/svg/time.svg" alt="#" />
+                  <div class="time__text">
+                    <span>09:00-19:00 Пн-Пт </span>
+                    <span>09:00-16:00 Сб-Вс</span>
+                  </div>
+                </div>
+                <div class="mail">
+                  <a class="footer__span" href="mailto:svetoch92@mail.ru">
+                    <img class="header__phone" src="./assets/img/svg/mail.svg" alt="#" />
+                    svetoch92@mail.ru
+                  </a>
+                </div>
+                <span class="end">© 2016 ОДО "Светоч" г. Могилев</span>
+              </div>
+
+              <div class="map r__block" id="map">
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad178c8ed075cfdcc431a46d18542fb748845f0d565bd68f33fe1983a70182aed&amp;source=constructor"
+                  width="100%"
+                  height="100%"
+                  frameborder="”0”"
+                  style="border: 0"
+                  allowfullscreen
+                  aria-hidden="false"
+                  tabindex="0"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>

@@ -1,99 +1,98 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ESLintPlugin = require("eslint-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FriendlyWebpackPlugin = require("@soda/friendly-errors-webpack-plugin");
-const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const PurgeCSSPlugin = require('purgecss-webpack-plugin');
+const glob = require('glob');
+const WebpackBar = require('webpackbar');
 
-const fileName = ["index"];
+const fileName = ['index'];
 
 module.exports = {
-  context: path.resolve(__dirname, "../src"),
+  context: path.resolve(__dirname, '../src'),
   entry: fileName.reduce((config = {}, file) => {
-    config[file] = `./${file}.ts`;
+    config[file] = `./${file}.js`;
     return config;
   }, {}),
   output: {
-    path: path.resolve(__dirname, "../dist"),
+    path: path.resolve(__dirname, '../dist'),
     filename: (pathToFile) => {
-      return pathToFile.chunk.name === "js/[name].[contenthash]"
-        ? "js/[name].[contenthash].js"
-        : "js/[name].[contenthash].js";
+      return pathToFile.chunk.name === 'js/[name].[contenthash]'
+        ? 'js/[name].[contenthash].js'
+        : 'js/[name].[contenthash].js';
     },
-    clean: {
-      dry: false,
-      keep: /\.git/,
+    clean: true,
+  },
+  cache: {
+    type: 'filesystem',
+    cacheDirectory: path.resolve(__dirname, '../cache'),
+    hashAlgorithm: 'md5',
+    buildDependencies: {
+      config: [path.join(__dirname, '../webpack.config.js')],
     },
   },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "../src"),
-      "@data": path.resolve(__dirname, "../src/data"),
-      "@view": path.resolve(__dirname, "../src/view"),
-    },
-    extensions: [".ts", ".js", ".json", ".scss"],
+  experiments: {
+    asyncWebAssembly: true,
   },
-  plugins: [].concat(
-    fileName.map(
-      (file) =>
-        new HtmlWebpackPlugin({
-          inject: "head",
-          template: `./${file}.html`,
-          filename: `./${file}.html`,
-          chunks: [file],
-          minify: {
-            html5: true,
-            collapseWhitespace: true,
-            removeComments: true,
-            removeTagWhitespace: true,
-          },
-        })
-    ),
-    [
-      new FriendlyWebpackPlugin(),
-      new MiniCssExtractPlugin(),
-      new ForkTsCheckerWebpackPlugin({
-        async: false,
-        typescript: {
-          configFile: "../tsconfig.json",
-        },
-        devServer: true,
-      }),
-      new ESLintPlugin({
-        extensions: [".ts", ".js"],
-        failOnError: false,
-        exclude: "node_modules",
-      }),
-    ].filter(Boolean)
-  ),
+  plugins: []
+    .concat(
+      fileName.map(
+        (file) =>
+          new HtmlWebpackPlugin({
+            inject: 'head',
+            template: `./${file}.html`,
+            filename: `./${file}.html`,
+            chunks: [file],
+            minify: {
+              html5: true,
+              collapseWhitespace: true,
+              removeComments: true,
+              removeTagWhitespace: true,
+            },
+          }),
+      ),
+      [
+        new MiniCssExtractPlugin({
+          filename: 'css/[name]_[contenthash:8].css',
+          chunkFilename: 'css/[name]_[contenthash:8].css',
+        }),
+        new PurgeCSSPlugin({
+          paths: glob.sync(`${path.join(__dirname, '../src')}/**/*`, {
+            nodir: true,
+          }),
+        }),
+        new WebpackBar(),
+      ],
+    )
+    .filter(Boolean),
   module: {
     rules: [
       {
         test: /\.(html)$/,
-        use: ["html-loader"],
+        use: ['html-loader'],
       },
       {
         test: /\.(s[ac]|c)ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
+          'css-loader',
+          'postcss-loader',
+          'resolve-url-loader',
+          { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
       {
         test: /\.(ts?|js?)$/,
         use: [
           {
-            loader: "thread-loader",
+            loader: 'thread-loader',
             options: {
               workerParallelJobs: 2,
               cacheGroups: {
                 default: {
                   reuseExistingChunk: true,
-                  chunks: "all",
+                  chunks: 'all',
                   priority: -20,
-                  name: "default",
+                  name: 'default',
                   test: /\.(ts|js)$/,
                   enforce: true,
                   minSize: 0,
@@ -102,15 +101,27 @@ module.exports = {
               },
             },
           },
-          "babel-loader",
+          'babel-loader',
         ],
         exclude: /node_modules/,
       },
       {
-        test: /\.(png|jpe?g|gif|svg|webp|ico|avif|mp3)$/i,
-        type: "asset",
+        test: /\.(png|jpe?g|gif|svg|webp|ico|avif)$/i,
+        type: 'asset',
         generator: {
-          filename: "assets/img/[name][hash][ext][query]",
+          filename: 'assets/img/[name].[hash].[ext]',
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024,
+          },
+        },
+      },
+      {
+        test: /\.(mp3|wav|mpe?g|ogg)?$/i,
+        type: 'asset',
+        generator: {
+          filename: 'assets/sounds/[name].[hash].[ext]',
         },
         parser: {
           dataUrlCondition: {
@@ -120,9 +131,9 @@ module.exports = {
       },
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
         generator: {
-          filename: "assets/font/[name].[ext]",
+          filename: 'assets/font/[name].[ext]',
         },
         parser: {
           dataUrlCondition: {
@@ -133,32 +144,29 @@ module.exports = {
     ],
   },
   optimization: {
-    moduleIds: "deterministic",
-    runtimeChunk: "single",
+    moduleIds: 'deterministic',
+    runtimeChunk: 'single',
     splitChunks: {
-      chunks: "all",
+      chunks: 'all',
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
-          name: "vendors",
+          name: 'vendors',
           enforce: true,
-          chunks: "all",
+          chunks: 'all',
           minSize: 0,
           minChunks: 1,
         },
       },
     },
   },
-  cache: {
-    type: "filesystem",
-    cacheDirectory: path.resolve(__dirname, "../cache"),
-    hashAlgorithm: "md5",
-    buildDependencies: {
-      config: [path.join(__dirname, "../webpack.config.js")],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+      '@data': path.resolve(__dirname, '../src/data'),
+      '@view': path.resolve(__dirname, '../src/view'),
     },
-  },
-  experiments: {
-    asyncWebAssembly: true,
+    extensions: ['.ts', '.js'],
   },
 };

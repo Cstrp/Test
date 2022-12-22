@@ -1,0 +1,29 @@
+#snowflake {
+  width: 16px;
+  height: 16px;
+}
+
+.snow .snow:before, .snow:after {
+  animation: letItSnow 3s linear 1e3;
+  background: radial-gradient(rgba(0, 144, 200), rgba(0, 0, 0, 0) 9%) 0 0/3em 3em;
+  content: "";
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%
+}
+
+.snow:before {
+  animation-duration: 2s
+}
+
+.snow:after {
+  animation-duration: 1s
+}
+
+@keyframes letItSnow {
+  to {
+    background-position: 3em 9em
+  }
+}
+

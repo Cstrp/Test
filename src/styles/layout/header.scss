@@ -1,0 +1,125 @@
+@import '../state/screens';
+@import '../state/shake';
+@import '../state/menu';
+
+.header {
+  &__wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    & ul {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 20px;
+    }
+
+    &-phone {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}
+
+.header__logo {
+  max-width: 75px;
+}
+
+.header__phone {
+  max-width: 20px;
+}
+
+.menu {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(255, 113, 68, 0.6) 0%, #fdce26 100%);
+  box-shadow: 0 4px 30px #fc9e4a;
+
+  animation: menu 0.5s linear;
+
+  & nav {
+    margin-top: 50px;
+  }
+
+  & ul {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
+
+.menu-button {
+  width: 25px;
+  display: none;
+  z-index: 2;
+
+  &-line {
+    height: 3px;
+    margin: 3px;
+    background-color: #323232;
+    transition: 0.3s;
+    transition-timing-function: linear;
+
+    &:nth-child(1) {
+      width: 25px;
+    }
+
+    &:nth-child(2) {
+      width: 19px;
+    }
+
+    &:nth-child(3) {
+      width: 12px;
+    }
+  }
+
+  &:hover .menu-button-line:nth-child(1) {
+    animation: shake 1s infinite;
+  }
+
+  &:hover .menu-button-line:nth-child(2) {
+    animation: shake 2s infinite;
+  }
+
+  &:hover .menu-button-line:nth-child(3) {
+    animation: shake 1.4s infinite;
+  }
+}
+
+.menu-button.active .menu-button-line:nth-child(1) {
+  background: #323232;
+  width: 20px;
+  transform: rotate(45deg) translate(8px);
+  transition: 1.2s;
+  animation: none;
+}
+
+.menu-button.active .menu-button-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.active .menu-button-line:nth-child(3) {
+  background: #323232;
+  width: 20px;
+  transform: rotate(-45deg) translate(8px);
+  transition: 1.2s;
+  animation: none;
+}
+
+@media screen and (max-width: $LandscapeMax) {
+  .nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}

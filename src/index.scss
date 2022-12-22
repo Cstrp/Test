@@ -1,1 +1,26 @@
-@import "~normalize.css";
+@import '~normalize.css';
+@import 'styles/state/font-size.min.css';
+@import './styles/base/base';
+@import './styles/layout/index';
+@import './styles/module/index';
+@import './styles/state/snow';
+
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: url('./assets/font/Gilroy-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Medium';
+  src: url('./assets/font/Gilroy-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('./assets/font/Gilroy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy-Semibold';
+  src: url('./assets/font/Gilroy-Semibold.ttf') format('truetype');
+}

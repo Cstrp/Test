@@ -1,0 +1,58 @@
+@import '../state/screens';
+
+.partners__wrapper {
+  max-width: 1920px;
+  overflow: hidden;
+  margin-top: 100px;
+
+  .partners__wrapper-content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 140px;
+
+    & img {
+      width: 150px;
+      height: 130px;
+      border-radius: 10px;
+    }
+  }
+}
+
+.partners__wrapper-counter {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  gap: 20px;
+}
+
+.partners__wrapper-counter {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  align-items: center;
+
+  .counter {
+    display: flex;
+    gap: 18px;
+  }
+
+  .controls {
+    display: flex;
+    width: 200px;
+    flex-flow: row nowrap;
+    gap: 25px;
+  }
+}
+
+.tns-nav {
+  cursor: pointer;
+
+  &-active {
+    color: #26497e;
+  }
+}
+
+
+

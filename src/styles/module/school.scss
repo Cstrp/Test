@@ -1,0 +1,145 @@
+@import '../state/screens';
+
+.school__wrapper {
+  max-width: 1920px;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__left {
+  max-width: 875px;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 70px;
+
+  &-text {
+    text-align: justify-all;
+
+    &:nth-child(2) {
+      color: #25497e;
+    }
+  }
+}
+
+.card__right {
+  position: relative;
+  max-width: 634px;
+  margin: 0 auto;
+
+  &-img {
+    z-index: 2;
+    -webkit-mask-image: url('../../assets/img/overlay.png');
+    mask-image: url('../../assets/img/overlay.png');
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transform: rotate(7deg);
+  }
+
+  &-overlay {
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    width: 100%;
+    transform: matrix(0.96, 0.25, -0.27, 0.97, 0, 0);
+  }
+}
+
+.control {
+  margin-top: 50px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  flex-flow: row nowrap;
+  gap: 25px;
+
+  .counter {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.card__hide {
+  position: relative;
+  display: none;
+  max-width: 250px;
+
+  .hide__img {
+    z-index: 2;
+    -webkit-mask-image: url('../../assets/img/overlay.png');
+    mask-image: url('../../assets/img/overlay.png');
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transform: rotate(7deg);
+  }
+
+  .hide__overlay {
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    width: 100%;
+    transform: matrix(0.96, 0.25, -0.27, 0.97, 0, 0);
+  }
+}
+
+@media screen and (max-width: $tabletsMax) and (min-width: $smartphonesMin) {
+  .card {
+
+    & h2 {
+      max-width: 255px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      text-align: start;
+    }
+  }
+
+
+
+  .card__hide {
+    display: block;
+  }
+
+  .card__left {
+    margin: 0 auto;
+  }
+
+  .card__right {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $smartphonesMax) and (min-width: $smartphonesMin) {
+  .card__left:nth-child(1) {
+    padding: 10px;
+    margin-left: -15px;
+  }
+}
+
+.tns-liveregion {
+  display: none;
+}
+.tns-visually-hidden {
+  display: none;
+}
+
+
+

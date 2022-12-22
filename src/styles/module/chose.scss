@@ -1,0 +1,74 @@
+@import "../state/screens";
+
+.chose__card-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chose__card {
+  margin-top: 100px;
+  max-width: 239px;
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+
+  .card__img {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    & img {
+      max-width: 100px;
+      height: 50px;
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      right: 40px;
+      top: -30px;
+      height: auto;
+      z-index: -2;
+    }
+  }
+
+}
+
+@media screen and (max-width: $tabletsMax) and (min-width: $smartphonesMin) {
+  .chose__card-wrapper {
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 40px;
+  }
+
+  .chose__card {
+    & p {
+      width: 170px;
+    }
+
+    .card__img {
+      position: relative;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+
+      & img {
+        max-width: 70px;
+        height: 50px;
+      }
+
+      .overlay {
+        position: absolute;
+        width: 100%;
+        right: 20px;
+        top: -10px;
+        height: auto;
+        z-index: -2;
+      }
+
+    }
+  }
+}
