@@ -1,0 +1,114 @@
+@import "../state/screens";
+
+.footer {
+  background: #343a40;
+  font-size: 16px;
+
+  &__row {
+    color: white;
+
+    &.down {
+      background: #000000;
+    }
+  }
+
+}
+
+.up {
+  padding: .75rem;
+
+  & a {
+    font-size: 28px;
+    opacity: .75;
+    color: white;
+    transition: .4s cubic-bezier(.65, .65, .07, 1);
+
+    &:hover {
+      color: #0056b3;
+    }
+  }
+}
+
+.down {
+  padding: .55rem;
+
+  & a {
+    font-size: 14px;
+    opacity: .75;
+    color: white;
+    transition: .4s cubic-bezier(.65, .65, .07, 1);
+
+    &:hover {
+      color: #0056b3;
+    }
+  }
+}
+
+.row {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  &__text {
+    max-width: 25%;
+    line-height: 1.3rem;
+  }
+
+  &__logo {
+    display: flex;
+    max-width: 15%;
+    align-items: center;
+  }
+
+  &__link {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 20px;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: $LaptopsMax) and (min-width: $smartphonesMin) {
+  .row {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 10px;
+
+    &__text {
+      font-size: 14px;
+      max-width: 75%;
+      text-align: center;
+      order: 3;
+    }
+
+    &__logo {
+      display: flex;
+      max-width: 30%;
+      align-items: center;
+      order: 1;
+    }
+
+    &__link {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      gap: 0;
+      max-width: 50%;
+      order: 2;
+
+      .tel {
+        font-size: 20px;
+        order: 2;
+      }
+
+      .address {
+        order: 1;
+      }
+    }
+  }
+}

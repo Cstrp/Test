@@ -1,0 +1,98 @@
+@import "../state/screens";
+
+.trening__content {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+
+  &-left {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    flex: 0 0 50%;
+
+    & p {
+      margin: 0;
+    }
+  }
+
+  &-right {
+    min-width: 40%;
+    flex: 0 0 40%;
+    text-align: left;
+    opacity: .90;
+
+    .trening__list {
+      font-size: 1rem !important;
+      width: 100% !important;
+
+      &-item {
+        width: 100% !important;
+        list-style-type: decimal;
+      }
+    }
+  }
+}
+
+.trening__content-title {
+  font-size: 2rem;
+
+  .orange {
+    color: #f16334;
+  }
+}
+
+.trening__content-subtitle {
+  font-size: 1.3rem;
+
+  .orange-bg {
+    background-color: #f16334;
+    color: white;
+    padding: 0 5px 0 5px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+
+
+@media screen and (max-width: $LaptopsMax) and (min-width: $smartphonesMin) {
+  .trening__content {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+
+    &-left {
+      min-width: 100%;
+      text-align: center;
+      flex: 0 0 100%;
+    }
+
+    &-right {
+      min-width: 100%;
+      flex: 0 0 1000%;
+
+      .trening__list {
+        font-size: 1rem;
+
+        &-item {
+          padding-top: 10px;
+          padding-left: 20px;
+        }
+      }
+    }
+
+  }
+
+  .trening__content-title {
+    font-size: 26px;
+  }
+
+  .trening__content-subtitle {
+    font-size: 22px;
+  }
+}

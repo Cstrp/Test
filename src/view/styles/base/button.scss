@@ -1,0 +1,12 @@
+button {
+  padding: 1.5rem 6.4rem;
+  border-radius: 50px;
+  font-size: 18px;
+  background-color: #ee543a;
+  text-align: center;
+  color: white;
+
+  &:disabled {
+    background-color: rgba(238, 84, 58, 0.5);
+  }
+}

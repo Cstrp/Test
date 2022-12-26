@@ -1,0 +1,23 @@
+@import "../state/screens";
+
+.hard__content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  .hard__img {
+    max-width: 100%;
+    filter: grayscale(.75);
+  }
+}
+
+@media screen and (max-width: $LaptopsMax) and (min-width: $smartphonesMin) {
+  .hard__content {
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .hard__img {
+      display: none;
+    }
+  }
+}

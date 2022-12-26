@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Trirong');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: "Trirong", serif;
+  font-size: 18px;
+  height: 100%;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f8;
+}
+
+.header,
+.footer {
+  padding: 0;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+h2 {
+  font-weight: 600;
+  color: #43464b;
+  text-align: center;
+}

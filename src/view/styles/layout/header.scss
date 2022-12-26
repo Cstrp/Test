@@ -1,0 +1,51 @@
+@import "../state/screens";
+
+.header {
+  font-size: 18px;
+  padding: .75rem;
+}
+
+.header__row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  &-logo {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 15%;
+    flex: 0 0 15%;
+    text-align: end;
+
+    .text {
+      font-size: 14px;
+      opacity: .75;
+    }
+  }
+
+  &-date {
+    max-width: 60%;
+    flex: 0 0 60%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2em;
+
+    .active {
+      color: #dc3545;
+    }
+  }
+}
+
+
+@media screen and (max-width: $LaptopsMax) and (min-width: $smartphonesMin) {
+  .text {
+    display: none;
+  }
+
+  .header__row-date {
+    font-size: 15px;
+  }
+}

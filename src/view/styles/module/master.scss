@@ -1,0 +1,120 @@
+@import "../state/screens";
+
+.master__content {
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+
+.left__block {
+  padding: 2rem;
+  max-width: 45%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  opacity: .85;
+
+
+  &-info {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+  }
+
+  &-social {
+    padding: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 20px;
+    max-width: 35%;
+    flex: 0 0 5%;
+    opacity: .75;
+  }
+}
+
+
+.right__block {
+  position: relative;
+  flex: 0 0 50%;
+  max-width: 50%;
+
+  & img {
+    height: 100%;
+  }
+}
+
+.left__block-list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  padding-left: 15px;
+
+  .left__block-item {
+    padding-left: 10px;
+    list-style: outside url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Orange_circle_100%25.svg/13px-Orange_circle_100%25.svg.png");
+  }
+}
+
+
+.left__block-title {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+
+  & h3 {
+    margin: 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+.left__block-title.visible {
+  display: none;
+}
+
+
+@media screen and (max-width: $LaptopsMax) and (min-width: $smartphonesMin) {
+  .master__content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .right__block {
+    order: 1;
+  }
+
+
+  .left__block-title.hide {
+    display: none;
+  }
+
+  .left__block-title.visible {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .left__block {
+    order: 2;
+
+    .left__block-list {
+      padding: 0;
+      margin: 0;
+
+      .left__block-item {
+        width: 200%;
+      }
+    }
+
+  }
+
+}
+
