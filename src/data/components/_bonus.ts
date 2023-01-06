@@ -1,12 +1,12 @@
-import {Template} from "../utils/_template";
-import {Input} from "./UI/_input";
-import {info} from "../interface/_info";
-import {Button} from "./UI/_btn";
-import {_empty} from "../utils/_empty";
-import {Select} from "./UI/_select";
-import {Option} from "./UI/_option";
-import {getData} from "../utils/_api";
-import {Pdf} from "./pdf";
+import { info } from "../interface/_info";
+import { getData } from "../utils/_api";
+import { _empty } from "../utils/_empty";
+import { Template } from "../utils/_template";
+import { Button } from "./UI/_btn";
+import { Input } from "./UI/_input";
+import { Option } from "./UI/_option";
+import { Select } from "./UI/_select";
+import { Pdf } from "./pdf";
 
 const info: string[] = []
 
@@ -25,7 +25,7 @@ export class Bonus extends Template {
         super(parent, 'form', 'form');
 
 
-        new Template(this.element, 'label', 'label', 'Ваш e-mail', {for: 'email'})
+        new Template(this.element, 'label', 'label', 'Ваш e-mail', { for: 'email' })
         this.email = new Input(this.element, 'text', {
             placeholder: 'Введите Ваш email',
             id: 'email'
@@ -33,7 +33,7 @@ export class Bonus extends Template {
         this.email.getValue = (evt) => this.updState('email', evt)
 
 
-        new Template(this.element, 'label', 'label', 'Телефон', {for: 'tel'})
+        new Template(this.element, 'label', 'label', 'Телефон', { for: 'tel' })
         const wrapper = new Template(this.element, 'div', 'tel__wrapper')
         this.select = new Select(wrapper.element)
         new Template(this.element, 'span', 'description', 'Номер телефона используется ТОЛЬКО для напоминания о вебинаре')
@@ -82,7 +82,7 @@ export class Bonus extends Template {
             const data = await getData()
             const res = data.data
             res.forEach((i, idx) => {
-                const {dial_code, name, emoji} = i
+                const { dial_code, name, emoji } = i
                 this._option = new Option(<HTMLSelectElement>this.select.element, '', {
                     value: `${dial_code}`,
                     label: `${emoji} ${dial_code} ${name}`,
